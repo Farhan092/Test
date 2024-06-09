@@ -1,0 +1,32 @@
+﻿
+@model practice.Models.Product
+@using practice.Models;
+
+@{
+    var product = (practice.Models.Product)ViewData["pro"];
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index</title>
+</head>
+<body>
+    <div>
+        @*<h1>@Model.Id</h1>
+        <h1>@Model.Name</h1>
+        <h1>@Model.Price</h1>*@
+        @*<text>@((Product)ViewData["pro"]).Name</text>*@
+
+        <h1>@product.Name</h1>
+        <h1>@ViewBag.Product.Name</h1>
+
+        @*<h1>@((Product)ViewData["pro"]).Name</h1>*@
+
+
+    </div>
+</body>
+</html>
