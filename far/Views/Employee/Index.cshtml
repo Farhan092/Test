@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model practice.Models.Employee
+
+<h2>Employee Index</h2>
+
+@Html.LabelFor(x => x.Id) - @Html.TextBoxFor(x => x.Id)
+
+@Html.LabelFor(x => x.Name) - @Html.TextBoxFor(x => x.Name)
+
+@Html.LabelFor(x => x.Password) - @Html.TextBoxFor(x => x.Password)
+
+@Html.DisplayForModel("Employee")
+
+@Html.EditorForModel()
+
+

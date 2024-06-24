@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Product1";
+}
+@model practice.Models.Product
+
+<h2>Product1</h2>
+<ul>
+
+    STRONGLY TYPE
+    <br />
+    <br />
+
+    @Html.LabelFor(x => x.Id) - @Html.TextBoxFor(x => x.Id)
+
+    <br />
+    @Html.LabelFor(x => x.Name) : @Html.TextBoxFor(x => x.Name)
+    <br />
+    @Html.LabelFor(x => x.Price) : @Html.TextBoxFor(x => x.Price)
+    <br />
+    @Html.LabelFor(x => x.Quantity) : @Html.TextBoxFor(x => x.Quantity)
+    <br />
+    @Html.LabelFor(x => x.Category) : @Html.TextBoxFor(x => x.Category)
+    <br />
+    @Html.LabelFor(x => x.ProductionDate) : @Html.TextBoxFor(x => x.ProductionDate)
+    <br />
+    @Html.LabelFor(x => x.IsDisposable) : @Html.TextBoxFor(x => x.IsDisposable)
+    <br />
+    @Html.LabelFor(x => x.Helpline) : @Html.TextBoxFor(x => x.Helpline)
+    <br />
+    @Html.LabelFor(x => x.SupportMail) : @Html.TextBoxFor(x => x.SupportMail)
+
+    <br />
+
+    <br />
+    <br />
+
+
+
+    TEMPLATED TYPE
+
+    <br />
+    <br />
+
+
+    @Html.EditorForModel()
+
+
+</ul>
+
+
