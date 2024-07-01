@@ -1,0 +1,76 @@
+﻿@model ProductCRUD.Context.Product
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+
+
+<style>
+    .error {
+        color: deeppink;
+        font-size: xx-small;
+    }
+</style>
+
+
+
+<h2>Save Product Details</h2>
+
+@using (Html.BeginForm("CreateProduct", "Product", FormMethod.Post))
+{
+
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "error" })
+        </div>
+        <br />
+
+        <div>
+            @Html.LabelFor(x => x.Price)
+            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Price, "", new { @class = "error" })
+        </div>
+        <br />
+
+        <div>
+            @Html.LabelFor(x => x.Quantity)
+            @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Quantity, "", new { @class = "error" })
+        </div>
+        <br />
+
+        <div>
+            @Html.LabelFor(x => x.ProductType)
+            @Html.TextBoxFor(x => x.ProductType, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.ProductType, "", new { @class = "error" })
+        </div>
+        <br />
+
+        <div>
+            @Html.LabelFor(x => x.ExpireDate)
+            @Html.EditorFor(x => x.ExpireDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.ExpireDate, "", new { @class = "error" })
+        </div>
+        <br />
+
+
+
+        <div>
+            @Html.LabelFor(x => x.ComplainAddress)
+            @Html.TextBoxFor(x => x.ComplainAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.ComplainAddress, "", new { @class = "error" })
+        </div>
+       
+        <br />
+        <div>
+            <input id="saveBtn" type="submit" value="Save" class="btn btn-primary" />
+        </div>
+
+
+
+    </div>
+
+
+}
