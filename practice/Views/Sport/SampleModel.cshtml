@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Sample";
+}
+
+<h2>Sample</h2>
+
+@model practice.ViewModel.SampleModel
+
+
+
+@{
+    ViewBag.Title = "All Sports Data";
+}
+
+<div>
+    <h2>All Player</h2>
+    <ul>
+        @foreach (var p in Model.Player)
+        {
+            <li>
+                <ul>
+                    <text>@p.Id</text>
+                    <br />
+                    <text>@p.Name</text>
+                    <br />
+                    <text>@p.Salary</text>
+                    <br />
+                </ul>
+            </li>
+
+        }
+    </ul>
+</div>
+
+
+<div>
+    <h2>All Staff</h2>
+    <ul>
+        @foreach (var s in Model.Staff)
+        {
+            <li>
+                <ul>
+                    <text>@s.Id</text>
+                    <br />
+                    <text>@s.Name</text>
+                    <br />
+                    <text>@s.Position</text>
+                    <br />
+                </ul>
+            </li>
+
+        }
+    </ul>
+</div>
+
+<div>
+    <h2>All Stadium</h2>
+    <ul>
+        @foreach (var s in Model.Stadium)
+        {
+            <li>
+                <ul>
+                    <text>@s.Location</text>
+                    <br />
+                    <text>@s.Capacity</text>
+                    <br />
+                   
+                </ul>
+            </li>
+
+        }
+    </ul>
+</div>
+
+
+
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Stadium";
+}
+
+@model List<practice.Models.Stadium>
+
+<h2>Stadium</h2>
+
+<ul>
+    @*    @foreach (var stadium in ViewBag.List)
+        {
+
+
+
+
+            <li>ID = @stadium.Location</li>
+            <li>Name = @stadium.Capacity</li>
+
+
+
+        }*@
+
+
+    @foreach (var stadium in Model)
+    {
+        <li>Location: @stadium.Location, Capacity: @stadium.Capacity</li>
+    }
+
+</ul>

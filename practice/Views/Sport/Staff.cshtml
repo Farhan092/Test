@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Staff";
+}
+
+<h2>Staff</h2>
+
+<ul>
+    @foreach (var stadium in ViewBag.List)
+    {
+
+        <li>ID = @stadium.Location</li>
+        <li>Name = @stadium.Capacity</li>
+
+
+
+    }
+</ul>

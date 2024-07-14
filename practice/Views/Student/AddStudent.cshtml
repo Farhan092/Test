@@ -1,0 +1,56 @@
+﻿@model practice.Context.Student
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<h2>AddStudent</h2>
+
+<style>
+    .rederror {
+        color: red;
+        font-size: xx-small;
+    }
+</style>
+
+
+
+<h2>Save Student Information</h2>
+
+@using (Html.BeginForm("CreateStudent", "Student", FormMethod.Post))
+{
+
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "rederror" })
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x => x.Cgpa)
+            @Html.TextBoxFor(x => x.Cgpa, new { @class = "form-control" } )
+            @Html.ValidationMessageFor(x => x.Cgpa, "", new { @class = "rederror" })
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x => x.AdmissionDate)
+            @Html.EditorFor(x => x.AdmissionDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.AdmissionDate, "", new { @class = "rederror" })
+        </div>
+   @*     <div>
+            @Html.LabelFor(x => x.Department.DepName)
+            @Html.DropDownListFor(x => x.Department.DepName, new SelectList(), "---select---", new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Department.DepName, "", new { @class = "rederror" })
+        </div>*@
+ 
+        <br />
+        <div>
+            <input id="saveBtn" type="submit" value="Save" class="btn btn-primary" />
+        </div>
+
+
+
+    </div>
+
+
+}
