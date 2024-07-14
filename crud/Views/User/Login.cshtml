@@ -1,0 +1,76 @@
+﻿@model CRUDEF.Context.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    .rederror {
+        color: red;
+        font-size: xx-small;
+    }
+</style>
+<script>
+    setTimeout(() => {
+        const box = document.getElementById('hide');
+        box.style.display = 'none';
+
+    }, 5000);
+</script>
+
+@if (ViewBag.Invalid != null)
+{
+    <div id="hide" class="alert alert-danger">
+        <strong>@ViewBag.Invalid</strong>
+    </div>
+}
+@if (ViewBag.Logout != null)
+{
+    <div id="hide" class="alert alert-info">
+        <strong>@ViewBag.Logout</strong>
+    </div>
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    <div class="container">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Username)
+            @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Username, "", new { @class = "rederror" })
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x => x.Password)
+            @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.Password, "", new { @class = "rederror" })
+        </div>
+        <br />
+
+        <div>
+            <input id="loginBtn" type="submit" value="Login" class="btn btn-primary" />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+}
+

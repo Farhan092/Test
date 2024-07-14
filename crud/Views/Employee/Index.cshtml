@@ -1,0 +1,84 @@
+﻿@model List<CRUDEF.Context.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<script>
+    setTimeout(() => {
+        const box = document.getElementById('hide');
+        box.style.display = 'none';
+
+    }, 5000);
+</script>
+
+<h2>Employee Information</h2>
+<hr />
+<br />
+
+@*<a href="@Url.Action("AddEmployee", "Employee")"><i>Add New Employee</i></a>*@
+<br />
+
+@if (TempData["MsgAdd"] != null)
+{
+    <div id="hide" class="alert alert-success">
+        <strong>Good Work!!!</strong> @TempData["MsgAdd"]
+    </div>
+}
+
+@if (TempData["MsgDel"] != null)
+{
+    <div id="hide" class="alert alert-danger">
+        <strong>Warning</strong> @TempData["MsgDel"]
+    </div>
+}
+
+@if (TempData["MsgEdit"] != null)
+{
+    <div id="hide" class="alert alert-success">
+        <strong>Success</strong> @TempData["MsgEdit"]
+    </div>
+
+
+}
+
+
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Joining Date</th>
+        <th>Email Address</th>
+        <th>Mobile Number</th>
+        <th>Salary</th>
+        <th>Designation</th>
+        @if (Session["username"] != null && Session["type"].ToString().Equals("admin"))
+        {
+        <th>Options</th>
+
+        }
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var items in Model)
+        {
+            <tr>
+                <td>@items.Name</td>
+                <td>@(items.JoinDate?.ToShortDateString() ?? "Join date not available")</td>
+                <td>@items.Email</td>
+                <td>@items.Cell</td>
+                <td>@items.Salary</td>
+                <td>@items.Designation</td>
+                @if (Session["username"] != null && Session["type"].ToString().Equals("admin"))
+                {
+                    <td>
+
+                        <a href="@Url.Action("EditEmployee", "Employee", new { id = items.Id })"><i>Edit</i></a> | <a href="@Url.Action("Delete", new { id = items.Id })"><i>Remove</i></a>
+                    </td>
+                }
+                
+                </tr>
+        }
+    }
+</table>
+
+
+
