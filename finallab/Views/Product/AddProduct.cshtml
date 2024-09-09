@@ -1,0 +1,45 @@
+﻿﻿@model FinalLabCF.Models.Product
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<style>
+    .rederror {
+        color: red;
+        font-size: xx-small;
+    }
+</style>
+
+
+
+<h2>Save Product Information</h2>
+
+@using (Html.BeginForm("CreateProduct", "Product", FormMethod.Post))
+{
+
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "rederror" })
+        </div>
+        <br />
+       <br />
+
+        <div>
+            @Html.LabelFor(x => x.Price)
+            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Price, "", new { @class = "rederror" })
+        </div>
+
+        <br />
+        <div>
+            <input id="saveBtn" type="submit" value="Save" class="btn btn-primary" />
+        </div>
+
+
+
+    </div>
+
+
+}
